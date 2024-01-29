@@ -10,7 +10,7 @@ const Navbar = () => {
   const menuItems = [
     { label: "Shop", type: "shop", dest: "/" },
     { label: "Men", type: "men", dest: "/men" },
-    { label: "Women", type: "women", dest: ".women" },
+    { label: "Women", type: "women", dest: "/women" },
     { label: "Kids", type: "kids", dest: "/kids" },
   ];
 
