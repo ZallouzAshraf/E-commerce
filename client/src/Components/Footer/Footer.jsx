@@ -1,17 +1,16 @@
 import React from "react";
 import "./Footer.css";
-import footer_logo from "../Assets/logo_big.png";
+import footer_logo from "../Assets/logo.png";
+import footer_logo_dark from "../Assets/logodark.jpg";
 import instagram from "../Assets/instagram_icon.png";
 import whatsapp from "../Assets/whatsapp_icon.png";
-import pinterest from "../Assets/pintester_icon.png";
+import facebook from "../Assets/facebook_icon.png";
+import useLocalStorage from "use-local-storage";
 
 const Footer = () => {
+  const [theme] = useLocalStorage("theme", "light");
   return (
-    <div className="footer">
-      <div className="footer-logo">
-        <img src={footer_logo} alt="" />
-        <p>SHOPPER</p>
-      </div>
+    <div className="footer" data-theme={theme}>
       <ul className="footer-links">
         <li>Company</li>
         <li>Products</li>
@@ -24,7 +23,7 @@ const Footer = () => {
           <img src={instagram} alt="" />
         </div>
         <div className="icons-container">
-          <img src={pinterest} alt="" />
+          <img src={facebook} alt="" />
         </div>
         <div className="icons-container">
           <img src={whatsapp} alt="" />

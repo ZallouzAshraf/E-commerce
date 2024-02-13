@@ -2,10 +2,12 @@ import React from "react";
 import "./NewCollections.css";
 import new_collection from "../Assets/new_collections";
 import Item from "../Items/item";
+import useLocalStorage from "use-local-storage";
 
 const NewCollections = () => {
+  const [theme] = useLocalStorage("theme", "light");
   return (
-    <div className="new-collections">
+    <div className="new-collections" data-theme={theme}>
       <h1>NEW COLLECTIONS</h1>
       <hr />
       <div className="collections">

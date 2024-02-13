@@ -10,35 +10,45 @@ import Footer from "./Components/Footer/Footer";
 import banner_mens from "./Components/Assets/banner_mens.png";
 import banner_women from "./Components/Assets/banner_women.png";
 import banner_kids from "./Components/Assets/banner_kids.png";
+import { createContext, useState } from "react";
+
+export const ThemeContext = createContext(null);
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Shop />} />
-          <Route
-            path="/men"
-            element={<ShopCategory banner={banner_mens} category="men" />}
-          />
-          <Route
-            path="/women"
-            element={<ShopCategory banner={banner_women} category="women" />}
-          />
-          <Route
-            path="/kids"
-            element={<ShopCategory banner={banner_kids} category="kid" />}
-          />
-          <Route path="/product" element={<Product />}>
-            <Route path=":productId" element={<Product />} />
-          </Route>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="login" element={<LoginSignup />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+    <div data-theme={theme}>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Shop />} />
+            <Route
+              path="/men"
+              element={<ShopCategory banner={banner_mens} category="men" />}
+            />
+            <Route
+              path="/women"
+              element={<ShopCategory banner={banner_women} category="women" />}
+            />
+            <Route
+              path="/kids"
+              element={<ShopCategory banner={banner_kids} category="kid" />}
+            />
+            <Route path="/product" element={<Product />}>
+              <Route path=":productId" element={<Product />} />
+            </Route>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="login" element={<LoginSignup />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </ThemeContext.Provider>
+    </div>
   );
 }
 

@@ -2,10 +2,12 @@ import React from "react";
 import "./Popular.css";
 import data_product from "../Assets/data";
 import Item from "../Items/item";
+import useLocalStorage from "use-local-storage";
 
 const Popular = () => {
+  const [theme, setTheme] = useLocalStorage("theme", "light");
   return (
-    <div className="popular">
+    <div className="popular" data-theme={theme}>
       <h1>POPULAR IN WOMEN</h1>
       <hr />
       <div className="popular-item">

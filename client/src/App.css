@@ -1,3 +1,29 @@
 * {
   margin: 0;
 }
+:root {
+  --background: #ffffff;
+  --text-primary: #000;
+  --border: #000000;
+  --inverse: #000000;
+  --price-color: #373737;
+  --box-color: #0f0f0f18;
+  --login-color: #fc949441;
+  --first-linear: #ffcdc755;
+  --second-linear: #0f0f0f35;
+}
+
+[data-theme="dark"] {
+  --background: #0f0f0f;
+  --text-primary: #fff;
+  --border: #ffffff;
+  --inverse: #fff;
+  --price-color: #fff;
+  --box-color: #0f0f0f;
+  --login-color: #7a7a7a10;
+  --first-linear: #8a8a8adc;
+  --second-linear: #0f0f0f;
+}
+.ShopApp {
+  background: var(--background);
+}

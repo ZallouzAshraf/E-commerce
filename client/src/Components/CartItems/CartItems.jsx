@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/cart_cross_icon.png";
+import useLocalStorage from "use-local-storage";
 
 const CartItems = () => {
   const { getTotal, all_product, cartItems, removeFromCart } =
     useContext(ShopContext);
+  const [theme] = useLocalStorage("theme", "light");
   return (
-    <div className="cartitems">
+    <div className="cartitems" data-theme={theme}>
       <div className="cartitems-main">
         <p>Products</p>
         <p>Title</p>
@@ -68,7 +70,6 @@ const CartItems = () => {
           </div>
         </div>
       </div>
-      ;
     </div>
   );
 };

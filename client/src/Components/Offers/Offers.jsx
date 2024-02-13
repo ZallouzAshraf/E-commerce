@@ -1,10 +1,12 @@
 import React from "react";
 import "./Offers.css";
 import exclusive_image from "../Assets/exclusive_image.png";
+import useLocalStorage from "use-local-storage";
 
 const Offers = () => {
+  const [theme] = useLocalStorage("theme", "light");
   return (
-    <div className="offers">
+    <div className="offers" data-theme={theme}>
       <div className="offers-left">
         <h1>Exclusive</h1>
         <h1>Offers For You</h1>

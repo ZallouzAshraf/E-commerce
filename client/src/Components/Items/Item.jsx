@@ -1,10 +1,12 @@
 import React from "react";
 import "./Item.css";
 import { Link } from "react-router-dom";
+import useLocalStorage from "use-local-storage";
 
 const Item = (props) => {
+  const [theme] = useLocalStorage("theme", "light");
   return (
-    <div className="item">
+    <div className="item" data-theme={theme}>
       <Link to={`/product/${props.id}`}>
         <img onClick={window.scrollTo(0, 0)} src={props.image} alt="" />
       </Link>

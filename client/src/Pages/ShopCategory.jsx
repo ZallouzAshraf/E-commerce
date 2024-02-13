@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import "./Css/ShopCategory.css";
 import { ShopContext } from "../Context/ShopContext";
 import dropdown_icon from "../Components/Assets/dropdown_icon.png";
-import Item from "../Components/Items/item";
+import Item from "../Components/Items/Item";
+import useLocalStorage from "use-local-storage";
 
 const ShopCategory = (props) => {
   const { all_product } = useContext(ShopContext);
+  const [theme] = useLocalStorage("theme", "light");
   return (
-    <div className="shop-category">
+    <div className="shop-category" data-theme={theme}>
       <img className="shopCategory-banner" src={props.banner} alt="" />
       <div className="shopcategory-indexSort">
         <p>
@@ -35,7 +37,9 @@ const ShopCategory = (props) => {
           }
         })}
       </div>
-      <div className="shopCategory-loadmore">Explore More</div>
+      <div className="shopCategory-loadmore-products">
+        <div className="shopCategory-loadmore">Explore More</div>
+      </div>
     </div>
   );
 };
