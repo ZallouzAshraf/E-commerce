@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./NewCollections.css";
-import new_collection from "../Assets/new_collections";
-import Item from "../Items/item";
+import Item from "../Items/Item";
 import useLocalStorage from "use-local-storage";
 
 const NewCollections = () => {
   const [theme] = useLocalStorage("theme", "light");
+  const [newcollections, setNewcollections] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/newcollections").then((response) =>
+      response.json().then((data) => setNewcollections(data))
+    );
+  }, []);
   return (
     <div className="new-collections" data-theme={theme}>
       <h1>NEW COLLECTIONS</h1>
       <hr />
       <div className="collections">
-        {new_collection.map((item, i) => {
+        {newcollections.map((item, i) => {
           return (
             <Item
               key={i}

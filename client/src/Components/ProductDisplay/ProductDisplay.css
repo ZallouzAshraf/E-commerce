@@ -1,6 +1,7 @@
 .productdisplay {
   display: flex;
   margin: 0px 170px;
+  color: var(--text-primary);
 }
 .productdisplay-left {
   display: flex;
@@ -24,7 +25,7 @@
   flex-direction: column;
 }
 .productdisplay-right h1 {
-  color: #3d3d3d;
+  color: var(--text-primary);
   font-size: 40px;
   font-weight: 700;
 }
@@ -33,7 +34,7 @@
   align-items: center;
   margin-top: 13px;
   gap: 5px;
-  color: #1c1c1c;
+  color: var(--text-primary);
   font-size: 16px;
 }
 .productdisplay-right-prices {
@@ -44,7 +45,7 @@
   font-weight: 700;
 }
 .productdisplay-right-price-old {
-  color: #818181;
+  color: var(--text-primary);
   text-decoration: line-through;
 }
 .productdisplay-right-price-new {
@@ -63,9 +64,10 @@
 }
 .productdisplay-right-sizes div {
   padding: 18px 24px;
-  background: #fbfbfb;
-  border: 1px solid #ebebeb;
+  background: var(--background);
+  border: 1px solid var(--inverse);
   cursor: pointer;
+  color: var(--text-primary);
 }
 .productdisplay-right button {
   padding: 20px 40px;

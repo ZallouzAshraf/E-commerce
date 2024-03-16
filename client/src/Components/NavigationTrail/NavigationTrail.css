@@ -2,27 +2,27 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #5e5e5e;
+  color: var(--text-primary);
   font-size: 16px;
   font-weight: 600;
-  margin: 60px 170px;
+  padding: 60px 170px;
   text-transform: capitalize;
 }
 @media (max-width: 1280px) {
   .navigationtrail {
-    margin: 30px 50px;
+    padding: 30px 50px;
     font-size: 14px;
   }
 }
 @media (max-width: 1024px) {
   .navigationtrail {
-    margin: 30px 30px;
+    padding: 30px 30px;
     font-size: 13px;
   }
 }
 @media (max-width: 800px) {
   .navigationtrail {
-    margin: 30px 10px;
+    padding: 30px 10px;
     font-size: 12px;
   }
 }

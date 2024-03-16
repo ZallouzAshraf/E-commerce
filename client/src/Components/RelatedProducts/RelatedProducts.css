@@ -4,9 +4,10 @@
   align-items: center;
   gap: 10px;
   height: 90vh;
+  color: var(--text-primary);
 }
 .relatedproducts h1 {
-  color: #171717;
+  color: var(--text-primary);
   font-size: 50px;
   font-weight: 600;
 }
@@ -14,7 +15,7 @@
   width: 200px;
   height: 6px;
   border-radius: 10px;
-  color: #252525;
+  background: var(--background);
 }
 .relatedproducts-item {
   margin-top: 50px;

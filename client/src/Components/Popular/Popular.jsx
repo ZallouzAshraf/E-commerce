@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Popular.css";
-import data_product from "../Assets/data";
-import Item from "../Items/item";
+import Item from "../Items/Item";
 import useLocalStorage from "use-local-storage";
 
 const Popular = () => {
   const [theme, setTheme] = useLocalStorage("theme", "light");
+  const [popular, setPopular] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/popularwomen")
+      .then((response) => response.json())
+      .then((data) => setPopular(data));
+  }, []);
   return (
     <div className="popular" data-theme={theme}>
       <h1>POPULAR IN WOMEN</h1>
       <hr />
       <div className="popular-item">
-        {data_product.map((item, i) => {
+        {popular.map((item, i) => {
           return (
             <Item
               key={i}

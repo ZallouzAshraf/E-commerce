@@ -2,10 +2,12 @@ import React from "react";
 import "./RelatedProducts.css";
 import data_product from "../Assets/data";
 import Item from "../Items/Item";
+import useLocalStorage from "use-local-storage";
 
 const RelatedProducts = () => {
+  const [theme, setTheme] = useLocalStorage("theme", "light");
   return (
-    <div className="relatedproducts">
+    <div className="relatedproducts" data-theme={theme}>
       <h1>Related Products</h1>
       <hr />
       <div className="relatedproducts-item">

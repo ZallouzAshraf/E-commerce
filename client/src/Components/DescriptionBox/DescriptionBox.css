@@ -12,18 +12,20 @@
   font-weight: 600;
   width: 170px;
   height: 70px;
-  border: 1px solid #d0d0d0;
+  color: var(--text-primary);
+  border: 1px solid var(--inverse);
 }
 .description-nav.fade {
-  background: #fbfbfb;
-  color: #555;
+  background: #969696ad;
+  color: var(--text-primary);
 }
 .description-desc {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  border: 1px solid #d0d0d0;
+  border: 1px solid var(--inverse);
   padding: 48px;
+  color: var(--text-primary);
   padding-bottom: 70px;
 }
 @media (max-width: 1280px) {

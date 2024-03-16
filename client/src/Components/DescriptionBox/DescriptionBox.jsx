@@ -1,9 +1,11 @@
 import React from "react";
 import "./DescriptionBox.css";
+import useLocalStorage from "use-local-storage";
 
 const DescriptionBox = () => {
+  const [theme, setTheme] = useLocalStorage("theme", "light");
   return (
-    <div className="description">
+    <div className="description" data-theme={theme}>
       <div className="description-navigator">
         <div className="description-nav">Description</div>
         <div className="description-nav fade">Reviews (96)</div>

@@ -3,12 +3,14 @@ import "./ProductDisplay.css";
 import start_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
+import useLocalStorage from "use-local-storage";
 
 const ProductDisplay = (props) => {
+  const [theme, setTheme] = useLocalStorage("theme", "light");
   const { product } = props;
   const { addToCart } = useContext(ShopContext);
   return (
-    <div className="productdisplay">
+    <div className="productdisplay" data-theme={theme}>
       <div className="productdisplay-left">
         <div className="productdisplay-img-list">
           <img src={product.image} alt="" />
